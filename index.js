@@ -28,7 +28,7 @@ let getRandomUser = () => {
 };
 
 
-// HOME ROUTE
+// HOME ROUTE:-
 app.get("/", (req, res) => {
   let q = `SELECT count(*) FROM user`;
   try {
@@ -43,7 +43,7 @@ app.get("/", (req, res) => {
   }
 });
 
-// SHOW ROUTE
+// SHOW ROUTE:-
 app.get("/user", (req, res) => {
   let q = `SELECT * FROM user`;
    try {
@@ -59,7 +59,7 @@ app.get("/user", (req, res) => {
 });
 
 
-// EDIT ROUTE
+// EDIT ROUTE :-
 app.get("/user/:id/edit", (req, res) => {
   let { id } = req.params;
   let q = `SELECT * FROM user WHERE id = '${id}'`;
@@ -77,7 +77,7 @@ app.get("/user/:id/edit", (req, res) => {
 });
 
 
-//UPDATE (DB) ROUTE
+//UPDATE (DB) ROUTE :-
 app.patch("/user/:id", (req, res) => {
   let { id } = req.params;
   let { password: formPass, username: newUsername } = req.body;
@@ -96,7 +96,7 @@ app.patch("/user/:id", (req, res) => {
          });
        }
      
-     });
+     }); 
    } catch (err) {
      console.log(err);
      res.send("some error in DB");
